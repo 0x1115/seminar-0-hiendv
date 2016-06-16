@@ -3,7 +3,7 @@
 
 ## View slides
 
-[Semninar #0: hiendv - Vuejs](http://0x1115.github.io/seminar-0-hiendv)
+[Semninar #0: hiendv - Vuejs](http://0x1115.github.io/seminar-0-hiendv-vuejs)
 
 
 ## View slides locally
