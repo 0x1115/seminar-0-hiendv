@@ -1,0 +1,209 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1')
+    title VueJS
+    link(rel='stylesheet', type='text/css', href='build/build.css')
+
+  body
+    article
+      section
+        h1 VueJS
+        h3
+          a(href="http://hiendv.0x1115.org") hiendv@0x1115.org
+
+      section
+        img(src="./images/2.jpg", alt="")
+
+      section
+        h3.bullet Yet another JavaScript framework
+        ul
+          li
+            img(src="./images/logo.png", alt="", style="height: 200px;")
+          li
+            a(href="http://vuejs.org") vuejs.org
+          li 2014/02
+          li
+            img(src="./images/1.png", alt="", style="max-width: 400px")
+            img(src="./images/2.png", alt="", style="max-width: 400px")
+
+      section
+        h2 Author?
+        h3.bullet Evan You
+        ul
+          li
+            a(href="https://github.com/yyx990803") github.com/yyx990803
+            br
+            a(href="http://evanyou.me") evanyou.me
+          li
+            img(src="./images/1.jpg", alt="", style="max-width: 200px")
+          li New Jersey / China
+
+      section
+        img(src="./images/3.jpg", alt="")
+      section
+        ul
+          li REACTIVITY
+          li COMPONENTS & MODULARITY
+          li ANIMATIONS, ROUTING, CLI, etc
+
+      section
+        h2 REACTIVITY
+        h3.bullet State - DOM Mapping
+        pre
+          code.language-javascript.
+            var object = {
+              message: 'Hello world!'
+            }
+            new Vue({
+              el: '#example',
+              data: object
+            })
+        pre
+          code.language-html.
+            &lt;div id="example">
+              {{ message }}
+            &lt;/div>
+      section
+        h2 COMPONENTS
+        h3.bullet Reusability
+        pre
+          code.language-javascript.
+            var Hello = Vue.extend({
+              template: '&lt;div>{{ message }}&lt;/div>',
+              props: ['myName'],
+              data () {
+                return {
+                  message: 'Hello ' + this.myName
+                }
+              }
+            })
+            // Register it with the tag &lt;hello>
+            Vue.component('hello', Hello)
+        pre
+          code.language-html.
+            &lt;hello my-name="James">&lt;/hello>
+
+      section
+        h2 MODULARITY
+        h3.bullet Global-scope avoiding
+        pre
+          code.language-javascript.
+            // Hello.js
+            export default {
+              template: '&lt;div>{{ message }}&lt;/div>',
+              props: ['myName'],
+              data () {
+                return {
+                  message: 'Hello ' + this.myName
+                }
+              }
+            }
+      section
+        h2 MODULARITY
+        h3 Global-scope avoiding
+        pre
+          code.language-javascript.
+            // main.js
+            import Hello from './Hello'
+            new Vue({
+              el: '#example',
+              data: object,
+              components: { Hello }
+            })
+        pre
+          code.language-html.
+            &lt;div id="example">
+              &lt;hello my-name="James">&lt;/hello>
+            &lt;/div>
+      section
+        h2 MODULARITY
+        h3.bullet Global-scope avoiding
+        pre
+          code.language-html.
+            &lt;!-- Hello.vue -->
+            &lt;style lang="scss" scoped>
+            .message {
+              color: red
+            }
+            &lt;/style>
+
+            &lt;template>
+              &lt;div class="message">
+                {{ message }}
+                Bye, &lt;strong>{{ myName }}&lt;/strong>
+              &lt;/div>
+            &lt;/template>
+
+            &lt;script>
+            export default {
+              props: ['myName'],
+              data () {
+                return {
+                  message: 'Hello ' + this.myName
+                }
+              }
+            }
+            &lt;/script>
+      section
+        img(src="./images/1.gif", alt="", style="max-width: 100%")
+
+      section
+        h2 Comparing to others?
+        h3.bullet See more
+          a(href="https://vuejs.org/guide/comparison.html")  vuejs.org/guide/comparison.html
+        ul
+          li Much simpler
+          li Learning curve
+          li Flexibility. E.g. two-way binding, non-SPA
+          li Performance: E.g. No dirty checking, Virtual DOM - Actual DOM
+
+      section
+        img(src="./images/2.gif", alt="", style="max-width: 100%")
+
+      section
+        h2 Laravel <3 VueJS
+        <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Current React learning status: overwhelmed. Learning <a href="https://twitter.com/vuejs">@vuejs</a> because it looks easy and has pretty website. 👍</p>&mdash; Taylor Otwell (@taylorotwell) <a href="https://twitter.com/taylorotwell/status/590281695581982720">April 20, 2015</a></blockquote>
+        <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+      section
+        h2 Laravel integration
+        h3.bullet Gulp, elixir, bower etc
+        ul.text-left
+          li <strong>./npm</strong>: Configurations, plugins, Elixir extensions
+          li <strong>./resources/bower</strong>: Bower libraries
+          li <strong>./resources/js</strong>: Js
+          li <strong>./resources/js/vue</strong>: VueJS
+          li <strong>./resources/js/vue/{group}</strong>: Front-end, Back-end
+          li <strong>./resources/js/vue/{group}/components</strong>: Vue components
+          li <strong>./resources/js/vue/{group}/services</strong>: Services
+          li <strong>./resources/js/vue/{group}/routes.js</strong>: Laravel routes on JS
+          li <strong>./resources/js/vue/{group}/your-main.js</strong>: Main file
+      section
+        h2 My Gulpfile
+        h3 What does it look like?
+        pre
+          code.language-javascript.
+            var elixir = require('laravel-elixir');
+            var plugins = require('./npm/plugins');
+            var config = require('./npm/config');
+            require('./npm/elixir.extensions');
+
+            // depedency configs go here
+            elixir(function(mix) {
+              // elixir tasks go here
+            })
+      section.emphatic-text(data-bespoke-backdrop='emphatic')
+        h2 Q & A
+        h3 Any questions?
+
+      section.emphatic-text(data-bespoke-backdrop='emphatic')
+        h3 Next week
+        h1 SVG
+
+      section.emphatic-text(data-bespoke-backdrop='emphatic')
+        h2 Thank You !
+        a(href="https://github.com/0x1115/seminar-0-hiendv") github.com/0x1115/seminar-0-hiendv
+        a(href="http://hiendv.0x1115.org") hiendv@0x1115.org
+    script(src='build/build.js')
