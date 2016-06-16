@@ -42,6 +42,7 @@ html
 
       section
         img(src="./images/3.jpg", alt="")
+
       section
         ul
           li REACTIVITY
@@ -62,16 +63,17 @@ html
             })
         pre
           code.language-html.
-            &lt;div id="example">
+            &lt;div id="example"&gt;
               {{ message }}
-            &lt;/div>
+            &lt;/div&gt;
+
       section
         h2 COMPONENTS
         h3.bullet Reusability
         pre
           code.language-javascript.
             var Hello = Vue.extend({
-              template: '&lt;div>{{ message }}&lt;/div>',
+              template: '&lt;div&gt;{{ message }}&lt;/div&gt;',
               props: ['myName'],
               data () {
                 return {
@@ -79,11 +81,11 @@ html
                 }
               }
             })
-            // Register it with the tag &lt;hello>
+            // Register it with the tag &lt;hello&gt;
             Vue.component('hello', Hello)
         pre
           code.language-html.
-            &lt;hello my-name="James">&lt;/hello>
+            &lt;hello my-name="James"&gt;&lt;/hello&gt;
 
       section
         h2 MODULARITY
@@ -92,7 +94,7 @@ html
           code.language-javascript.
             // Hello.js
             export default {
-              template: '&lt;div>{{ message }}&lt;/div>',
+              template: '&lt;div&gt;{{ message }}&lt;/div&gt;',
               props: ['myName'],
               data () {
                 return {
@@ -100,6 +102,7 @@ html
                 }
               }
             }
+
       section
         h2 MODULARITY
         h3 Global-scope avoiding
@@ -114,29 +117,30 @@ html
             })
         pre
           code.language-html.
-            &lt;div id="example">
-              &lt;hello my-name="James">&lt;/hello>
-            &lt;/div>
+            &lt;div id="example"&gt;
+              &lt;hello my-name="James"&gt;&lt;/hello&gt;
+            &lt;/div&gt;
+
       section
         h2 MODULARITY
         h3.bullet Global-scope avoiding
         pre
           code.language-html.
-            &lt;!-- Hello.vue -->
-            &lt;style lang="scss" scoped>
+            &lt;!-- Hello.vue --&gt;
+            &lt;style lang="scss" scoped&gt;
             .message {
               color: red
             }
-            &lt;/style>
+            &lt;/style&gt;
 
-            &lt;template>
-              &lt;div class="message">
+            &lt;template&gt;
+              &lt;div class="message"&gt;
                 {{ message }}
-                Bye, &lt;strong>{{ myName }}&lt;/strong>
-              &lt;/div>
-            &lt;/template>
+                Bye, &lt;strong&gt;{{ myName }}&lt;/strong&gt;
+              &lt;/div&gt;
+            &lt;/template&gt;
 
-            &lt;script>
+            &lt;script&gt;
             export default {
               props: ['myName'],
               data () {
@@ -145,7 +149,8 @@ html
                 }
               }
             }
-            &lt;/script>
+            &lt;/script&gt;
+
       section
         img(src="./images/1.gif", alt="", style="max-width: 100%")
 
@@ -163,7 +168,7 @@ html
         img(src="./images/2.gif", alt="", style="max-width: 100%")
 
       section
-        h2 Laravel <3 VueJS
+        h2 Laravel &lt;3 VueJS
         <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Current React learning status: overwhelmed. Learning <a href="https://twitter.com/vuejs">@vuejs</a> because it looks easy and has pretty website. 👍</p>&mdash; Taylor Otwell (@taylorotwell) <a href="https://twitter.com/taylorotwell/status/590281695581982720">April 20, 2015</a></blockquote>
         <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
@@ -171,15 +176,34 @@ html
         h2 Laravel integration
         h3.bullet Gulp, elixir, bower etc
         ul.text-left
-          li <strong>./npm</strong>: Configurations, plugins, Elixir extensions
-          li <strong>./resources/bower</strong>: Bower libraries
-          li <strong>./resources/js</strong>: Js
-          li <strong>./resources/js/vue</strong>: VueJS
-          li <strong>./resources/js/vue/{group}</strong>: Front-end, Back-end
-          li <strong>./resources/js/vue/{group}/components</strong>: Vue components
-          li <strong>./resources/js/vue/{group}/services</strong>: Services
-          li <strong>./resources/js/vue/{group}/routes.js</strong>: Laravel routes on JS
-          li <strong>./resources/js/vue/{group}/your-main.js</strong>: Main file
+          li
+            strong ./npm
+            | : Configurations, plugins, Elixir extensions
+          li
+            strong ./resources/bower
+            | : Bower libraries
+          li
+            strong ./resources/js
+            | : Js
+          li
+            strong ./resources/js/vue
+            | : VueJS
+          li
+            strong ./resources/js/vue/{group}
+            | : Front-end, Back-end
+          li
+            strong ./resources/js/vue/{group}/components
+            | : Vue components
+          li
+            strong ./resources/js/vue/{group}/services
+            | : Services
+          li
+            strong ./resources/js/vue/{group}/routes.js
+            | : Laravel routes on JS
+          li
+            strong ./resources/js/vue/{group}/your-main.js
+            | : Main file
+
       section
         h2 My Gulpfile
         h3 What does it look like?
@@ -206,4 +230,5 @@ html
         h2 Thank You !
         a(href="https://github.com/0x1115/seminar-0-hiendv") github.com/0x1115/seminar-0-hiendv
         a(href="http://hiendv.0x1115.org") hiendv@0x1115.org
+
     script(src='build/build.js')
