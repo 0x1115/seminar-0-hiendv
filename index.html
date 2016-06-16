@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>VueJS</title>
+    <link rel="stylesheet" type="text/css" href="build/build.css">
+  </head>
+  <body>
+    <article>
+      <section>
+        <h1>VueJS</h1>
+        <h3><a href="http://hiendv.0x1115.org">hiendv@0x1115.org</a></h3>
+      </section>
+      <section><img src="./images/2.jpg" alt=""></section>
+      <section>
+        <h3 class="bullet">Yet another JavaScript framework</h3>
+        <ul>
+          <li><img src="./images/logo.png" alt="" style="height: 200px;"></li>
+          <li><a href="http://vuejs.org">vuejs.org</a></li>
+          <li>2014/02</li>
+          <li><img src="./images/1.png" alt="" style="max-width: 400px"><img src="./images/2.png" alt="" style="max-width: 400px"></li>
+        </ul>
+      </section>
+      <section>
+        <h2>Author?</h2>
+        <h3 class="bullet">Evan You</h3>
+        <ul>
+          <li><a href="https://github.com/yyx990803">github.com/yyx990803</a><br><a href="http://evanyou.me">evanyou.me</a></li>
+          <li><img src="./images/1.jpg" alt="" style="max-width: 200px"></li>
+          <li>New Jersey / China</li>
+        </ul>
+      </section>
+      <section><img src="./images/3.jpg" alt=""></section>
+      <section>
+        <ul>
+          <li>REACTIVITY</li>
+          <li>COMPONENTS & MODULARITY</li>
+          <li>ANIMATIONS, ROUTING, CLI, etc</li>
+        </ul>
+      </section>
+      <section>
+        <h2>REACTIVITY</h2>
+        <h3 class="bullet">State - DOM Mapping</h3>
+        <pre><code class="language-javascript">var object = {
+  message: 'Hello world!'
+}
+new Vue({
+  el: '#example',
+  data: object
+})</code></pre>
+        <pre><code class="language-html">&lt;div id="example">
+  {{ message }}
+&lt;/div></code></pre>
+      </section>
+      <section>
+        <h2>COMPONENTS</h2>
+        <h3 class="bullet">Reusability</h3>
+        <pre><code class="language-javascript">var Hello = Vue.extend({
+  template: '&lt;div>{{ message }}&lt;/div>',
+  props: ['myName'],
+  data () {
+    return {
+      message: 'Hello ' + this.myName
+    }
+  }
+})
+// Register it with the tag &lt;hello>
+Vue.component('hello', Hello)</code></pre>
+        <pre><code class="language-html">&lt;hello my-name="James">&lt;/hello>
+</code></pre>
+      </section>
+      <section>
+        <h2>MODULARITY</h2>
+        <h3 class="bullet">Global-scope avoiding</h3>
+        <pre><code class="language-javascript">// Hello.js
+export default {
+  template: '&lt;div>{{ message }}&lt;/div>',
+  props: ['myName'],
+  data () {
+    return {
+      message: 'Hello ' + this.myName
+    }
+  }
+}</code></pre>
+      </section>
+      <section>
+        <h2>MODULARITY</h2>
+        <h3>Global-scope avoiding</h3>
+        <pre><code class="language-javascript">// main.js
+import Hello from './Hello'
+new Vue({
+  el: '#example',
+  data: object,
+  components: { Hello }
+})</code></pre>
+        <pre><code class="language-html">&lt;div id="example">
+  &lt;hello my-name="James">&lt;/hello>
+&lt;/div></code></pre>
+      </section>
+      <section>
+        <h2>MODULARITY</h2>
+        <h3 class="bullet">Global-scope avoiding</h3>
+        <pre><code class="language-html">&lt;!-- Hello.vue -->
+&lt;style lang="scss" scoped>
+.message {
+  color: red
+}
+&lt;/style>
+
+&lt;template>
+  &lt;div class="message">
+    {{ message }}
+    Bye, &lt;strong>{{ myName }}&lt;/strong>
+  &lt;/div>
+&lt;/template>
+
+&lt;script>
+export default {
+  props: ['myName'],
+  data () {
+    return {
+      message: 'Hello ' + this.myName
+    }
+  }
+}
+&lt;/script></code></pre>
+      </section>
+      <section><img src="./images/1.gif" alt="" style="max-width: 100%"></section>
+      <section>
+        <h2>Comparing to others?</h2>
+        <h3 class="bullet">See more<a href="https://vuejs.org/guide/comparison.html"> vuejs.org/guide/comparison.html</a></h3>
+        <ul>
+          <li>Much simpler</li>
+          <li>Learning curve</li>
+          <li>Flexibility. E.g. two-way binding, non-SPA</li>
+          <li>Performance: E.g. No dirty checking, Virtual DOM - Actual DOM</li>
+        </ul>
+      </section>
+      <section><img src="./images/2.gif" alt="" style="max-width: 100%"></section>
+      <section>
+        <h2>Laravel <3 VueJS</h2><blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Current React learning status: overwhelmed. Learning <a href="https://twitter.com/vuejs">@vuejs</a> because it looks easy and has pretty website. 👍</p>&mdash; Taylor Otwell (@taylorotwell) <a href="https://twitter.com/taylorotwell/status/590281695581982720">April 20, 2015</a></blockquote>
+        <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+      </section>
+      <section>
+        <h2>Laravel integration</h2>
+        <h3 class="bullet">Gulp, elixir, bower etc</h3>
+        <ul class="text-left">
+          <li><strong>./npm</strong>: Configurations, plugins, Elixir extensions</li>
+          <li><strong>./resources/bower</strong>: Bower libraries</li>
+          <li><strong>./resources/js</strong>: Js</li>
+          <li><strong>./resources/js/vue</strong>: VueJS</li>
+          <li><strong>./resources/js/vue/{group}</strong>: Front-end, Back-end</li>
+          <li><strong>./resources/js/vue/{group}/components</strong>: Vue components</li>
+          <li><strong>./resources/js/vue/{group}/services</strong>: Services</li>
+          <li><strong>./resources/js/vue/{group}/routes.js</strong>: Laravel routes on JS</li>
+          <li><strong>./resources/js/vue/{group}/your-main.js</strong>: Main file</li>
+        </ul>
+      </section>
+      <section>
+        <h2>My Gulpfile</h2>
+        <h3>What does it look like?</h3>
+        <pre><code class="language-javascript">var elixir = require('laravel-elixir');
+var plugins = require('./npm/plugins');
+var config = require('./npm/config');
+require('./npm/elixir.extensions');
+
+// depedency configs go here
+elixir(function(mix) {
+  // elixir tasks go here
+})</code></pre>
+      </section>
+      <section data-bespoke-backdrop="emphatic" class="emphatic-text">
+        <h2>Q & A</h2>
+        <h3>Any questions?</h3>
+      </section>
+      <section data-bespoke-backdrop="emphatic" class="emphatic-text">
+        <h3>Next week</h3>
+        <h1>SVG</h1>
+      </section>
+      <section data-bespoke-backdrop="emphatic" class="emphatic-text">
+        <h2>Thank You !</h2><a href="https://github.com/0x1115/seminar-0-hiendv">github.com/0x1115/seminar-0-hiendv</a><a href="http://hiendv.0x1115.org">hiendv@0x1115.org</a>
+      </section>
+    </article>
+    <script src="build/build.js"></script>
+  </body>
+</html>
