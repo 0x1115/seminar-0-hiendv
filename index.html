@@ -35,7 +35,7 @@
       <section>
         <ul>
           <li>REACTIVITY</li>
-          <li>COMPONENTS & MODULARITY</li>
+          <li>COMPONENTS &amp; MODULARITY</li>
           <li>ANIMATIONS, ROUTING, CLI, etc</li>
         </ul>
       </section>
@@ -49,15 +49,16 @@ new Vue({
   el: '#example',
   data: object
 })</code></pre>
-        <pre><code class="language-html">&lt;div id="example">
+        <pre><code class="language-html">&lt;div id="example"&gt;
   {{ message }}
-&lt;/div></code></pre>
+&lt;/div&gt;
+</code></pre>
       </section>
       <section>
         <h2>COMPONENTS</h2>
         <h3 class="bullet">Reusability</h3>
         <pre><code class="language-javascript">var Hello = Vue.extend({
-  template: '&lt;div>{{ message }}&lt;/div>',
+  template: '&lt;div&gt;{{ message }}&lt;/div&gt;',
   props: ['myName'],
   data () {
     return {
@@ -65,9 +66,9 @@ new Vue({
     }
   }
 })
-// Register it with the tag &lt;hello>
+// Register it with the tag &lt;hello&gt;
 Vue.component('hello', Hello)</code></pre>
-        <pre><code class="language-html">&lt;hello my-name="James">&lt;/hello>
+        <pre><code class="language-html">&lt;hello my-name="James"&gt;&lt;/hello&gt;
 </code></pre>
       </section>
       <section>
@@ -75,14 +76,15 @@ Vue.component('hello', Hello)</code></pre>
         <h3 class="bullet">Global-scope avoiding</h3>
         <pre><code class="language-javascript">// Hello.js
 export default {
-  template: '&lt;div>{{ message }}&lt;/div>',
+  template: '&lt;div&gt;{{ message }}&lt;/div&gt;',
   props: ['myName'],
   data () {
     return {
       message: 'Hello ' + this.myName
     }
   }
-}</code></pre>
+}
+</code></pre>
       </section>
       <section>
         <h2>MODULARITY</h2>
@@ -94,28 +96,29 @@ new Vue({
   data: object,
   components: { Hello }
 })</code></pre>
-        <pre><code class="language-html">&lt;div id="example">
-  &lt;hello my-name="James">&lt;/hello>
-&lt;/div></code></pre>
+        <pre><code class="language-html">&lt;div id="example"&gt;
+  &lt;hello my-name="James"&gt;&lt;/hello&gt;
+&lt;/div&gt;
+</code></pre>
       </section>
       <section>
         <h2>MODULARITY</h2>
         <h3 class="bullet">Global-scope avoiding</h3>
-        <pre><code class="language-html">&lt;!-- Hello.vue -->
-&lt;style lang="scss" scoped>
+        <pre><code class="language-html">&lt;!-- Hello.vue --&gt;
+&lt;style lang="scss" scoped&gt;
 .message {
   color: red
 }
-&lt;/style>
+&lt;/style&gt;
 
-&lt;template>
-  &lt;div class="message">
+&lt;template&gt;
+  &lt;div class="message"&gt;
     {{ message }}
-    Bye, &lt;strong>{{ myName }}&lt;/strong>
-  &lt;/div>
-&lt;/template>
+    Bye, &lt;strong&gt;{{ myName }}&lt;/strong&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
 
-&lt;script>
+&lt;script&gt;
 export default {
   props: ['myName'],
   data () {
@@ -124,7 +127,8 @@ export default {
     }
   }
 }
-&lt;/script></code></pre>
+&lt;/script&gt;
+</code></pre>
       </section>
       <section><img src="./images/1.gif" alt="" style="max-width: 100%"></section>
       <section>
@@ -139,7 +143,7 @@ export default {
       </section>
       <section><img src="./images/2.gif" alt="" style="max-width: 100%"></section>
       <section>
-        <h2>Laravel <3 VueJS</h2><blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Current React learning status: overwhelmed. Learning <a href="https://twitter.com/vuejs">@vuejs</a> because it looks easy and has pretty website. 👍</p>&mdash; Taylor Otwell (@taylorotwell) <a href="https://twitter.com/taylorotwell/status/590281695581982720">April 20, 2015</a></blockquote>
+        <h2>Laravel &lt;3 VueJS</h2><blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Current React learning status: overwhelmed. Learning <a href="https://twitter.com/vuejs">@vuejs</a> because it looks easy and has pretty website. 👍</p>&mdash; Taylor Otwell (@taylorotwell) <a href="https://twitter.com/taylorotwell/status/590281695581982720">April 20, 2015</a></blockquote>
         <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
       </section>
       <section>
@@ -171,7 +175,7 @@ elixir(function(mix) {
 })</code></pre>
       </section>
       <section data-bespoke-backdrop="emphatic" class="emphatic-text">
-        <h2>Q & A</h2>
+        <h2>Q &amp; A</h2>
         <h3>Any questions?</h3>
       </section>
       <section data-bespoke-backdrop="emphatic" class="emphatic-text">
